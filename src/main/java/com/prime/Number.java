@@ -3,7 +3,7 @@ package com.prime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HelloWorld {
+public class Number {
 
     public boolean isPrime(int number){
         int largestFactor = (int)Math.sqrt(number);
@@ -16,8 +16,6 @@ public class HelloWorld {
         }
         return true;
     }
-
-
 
     public List<Integer> primeFactors(int number) {
         ArrayList<Integer> primeFactors = new ArrayList<Integer>();
