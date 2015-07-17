@@ -12,62 +12,56 @@ import static org.junit.Assert.assertThat;
 
 public class NumberTest {
 
-
     private Number number;
-
-    @Before
-    public void setUp() throws Exception {
-        number = new Number();
-    }
 
     @Test
     public void shouldReturnTrueIfNumberIsPrime() {
-        assertEquals(true, number.isPrime(2));
+        number = new Number(5);
+
+        boolean actualResult = number.isPrime();
+        assertEquals(true, actualResult);
     }
 
     @Test
     public void shouldReturnFalseIfNumberIsComposite() {
-        assertEquals(false, number.isPrime(4));
+        number = new Number(6);
+
+        boolean actualResult = number.isPrime();
+        assertEquals(false, actualResult);
     }
 
     @Test
     public void shouldReturnFalseIfNumberIsOne() {
-        boolean result = number.isPrime(1); //execution
+        number = new Number(1);
 
-        assertEquals(false, result); //assertion
-
+        boolean result = number.isPrime(); //execution
         assertThat(result, is(false));
     }
 
     @Test
-    public void shouldReturnTwoPrimeFactorsFor10() {
-        List<Integer> primeFactors = number.primeFactors(10);
-
-        assertEquals(2, primeFactors.size());
-    }
-
-    @Test
     public void shouldReturnPrimeFactorsFor10() {
+        number = new Number(10);
 
-
-        List<Integer> primeFactors = number.primeFactors(10);
+        List<Integer> primeFactors = number.primeFactors();
 
         assertEquals(Arrays.asList(2, 5), primeFactors);
     }
 
     @Test
     public void shouldReturnPrimeFactorsFor15() {
-        List<Integer> primeFactors = number.primeFactors(15);
+        number = new Number(15);
+
+        List<Integer> primeFactors = number.primeFactors();
 
         assertEquals(Arrays.asList(3, 5), primeFactors);
     }
 
     @Test
     public void shouldReturnPrimeFactorsFor66() {
-        List<Integer> primeFactors = number.primeFactors(66);
+        number = new Number(66);
+
+        List<Integer> primeFactors = number.primeFactors();
 
         assertEquals(Arrays.asList(2, 3, 11), primeFactors);
     }
-
-
 }
